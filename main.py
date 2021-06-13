@@ -181,14 +181,24 @@ def main():
             print("Bye! Bye! :)")
             exit()
         if keys[6] in command.lower():
-            ## edit
-            for t in commands:
-                print(t)
-            with open(str(os.getcwd()) + "/modules/" + str(t) + "/" + "config.json", "r") as test:
-                tata = json.loads(test.read())
-            with open(str(os.getcwd()) + "/modules/" + str(t) + "/" + "config.json", "w") as wri:
-                wri.write(tata)
-            print(tata)
+            for t in glob.glob("modules/*"):
+                if os.path.isdir(t):
+                    with open(str(t) + "/" + "config.json", "r") as test:
+                        tata = json.loads(test.read())
+                    c = 1
+                    for item in tata.items():
+                        bam.append(item)
+                        c += 1
+                    for i in range(0, c, 2):
+                        bass.append(bam[:i])
+                    for l in bass:
+                        if len(l) == 0:
+                            continue
+                        tata[l[len(l) -2][0]] = ""
+                    with open(str(t) + "/" + "config.json", "w") as wri:
+                        wri.write(json.dumps(tata))
+                    bam.clear()
+                    bass.clear()
             return
         if not command.lower() in keys and com != 0:
             print("Wrong command. Type help to see the list of commands!")
