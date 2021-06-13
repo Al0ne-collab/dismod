@@ -88,7 +88,7 @@ def main():
                 bass.clear()
                 return
             if plug_com[1] in command.lower():
-                data = command.lower().split(" ")
+                data = command.lower().split()
                 for t in data:
                     if len(t) == 0:
                         data.remove(t)
@@ -97,17 +97,29 @@ def main():
                             set variable value""")
                     return
                 with open(str(plugins) + "/" + str(plug) + "/" + "config.json", "r") as con:
-                    data = json.loads(con.read())
-
-                print(bam)
-                if command.lower() in bam:
-                    comma = command.replace("set", "").replace(i, "").strip()
-                    data[i] = comma
-                else:
+                    tata = json.loads(con.read())
+                for t in tata.items():
+                    bass.append(t)
+                    c += 1
+                for k in range(0, c, 2):
+                    bam.append(bass[:k])
+                for lan in bam:
+                    if len(lan) == 0:
+                        continue
+                    asa.append(lan[len(lan) -2][0])
+                att = []
+                for t in asa:
+                    if t in data:
+                        comma = command.replace("set", "").replace(t, "").strip()
+                        tata[t] = comma
+                        att.append(True)
+                    else:
+                        att.append(False)
+                if not True in att:
                     print("Variable not found!")
-                con = json.dumps(data)
+                    return
                 with open(str(plugins) + "/" + str(plug) + "/" + "config.json", "w") as test:
-                    test.write(con)
+                    test.write(json.dumps(tata))
                 return
             if plug_com[2] in command.lower():
                 with open(str(plugins) + "/" + str(plug) + "/" + "config.json", "r") as best:
@@ -174,7 +186,6 @@ def main():
             path = ""
             return
         if keys[4] in command.lower():
-            os.system("clear")
             print(random.choice(banner))
             return
         if keys[5] in command.lower():

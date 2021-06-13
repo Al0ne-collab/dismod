@@ -1,6 +1,6 @@
 # DISMOD
 
-Simple discord hacking pack
+Simple discord hacking pack.
 
 ## Future Features
 
@@ -9,3 +9,7 @@ Simple discord hacking pack
 - [ ] Commands
 
 - [ ] Graphics
+
+## Contact
+
+QairexStudio@gmail.com
