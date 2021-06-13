@@ -4,8 +4,8 @@ Simple discord hacking pack
 
 ## Future Features
 
-- [] Multiple Session
+- [ ] Multiple Session
 
-- [] Commands
+- [ ] Commands
 
-- [] Graphics
+- [ ] Graphics
