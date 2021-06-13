@@ -160,17 +160,19 @@ def main():
         except:
             pass
         if keys[0] in command.lower():
-            ## soon edit to not found module print(()()()(()((()()()))
             for t in commands:
                 if t in command.lower():
-                    if t in commands:
-                        plug = str(t)
-                        path = "module > " + str(t) + " "
-                        return
-                    else:
-                        path = ""
-                        print("Not found module!")
-                        return
+                    plug = str(t)
+                    path = "module > " + str(t) + " "
+                    return
+                    bam.append(True)
+                else:
+                    path = ""
+                    bam.append(False)
+                    return
+            if not True in bam:
+                print("Not found module!")
+                return
             return
         if keys[1] in command.lower():
             for help in komut.items():
