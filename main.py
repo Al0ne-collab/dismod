@@ -160,17 +160,13 @@ def main():
         except:
             pass
         if keys[0] in command.lower():
+            ham = False
             for t in commands:
                 if t in command.lower():
                     plug = str(t)
                     path = "module > " + str(t) + " "
-                    return
-                    bam.append(True)
-                else:
-                    path = ""
-                    bam.append(False)
-                    return
-            if not True in bam:
+                    ham = True
+            if not ham:
                 print("Not found module!")
                 return
             return
