@@ -7,19 +7,6 @@ import json
 import glob
 import readline
 ## CODED BY 81L1NM1Y0R from Qairex Studio
-## UPDATE ----> all configs list
-## yourname$~
-## folder name colors etc.
-## library of os.system
-## stdout for subprocess.call reason some commands not working of bash
-## UPDATE => mandatory config > default < can change it
-## UPDATE => u can reset specific variable
-## UPDATE => Specific reset variables
-## UPDATE => multiple session eg run 100 then running module 100 times
-## UPDATE => Checking installing on run
-
-## Package installer checker etc. --> https://stackoverflow.com/questions/122327/how-do-i-find-the-location-of-my-python-site-packages-directory
-## Color etc. library
 os.system("clear")
 banner =["""
        ....             .       .x+=:.                                      ..
