@@ -6,9 +6,11 @@ import sys
 import json
 import glob
 import readline
+import requests
 ## CODED BY 81L1NM1Y0R from Qairex Studio
 os.system("clear")
-banner =["""
+version = "0.2"
+banner =[f"""
        ....             .       .x+=:.                                      ..
    .xH888888Hx.        @88>    z`    ^%                                   dF
  .H8888888888888:      %8P        .       <88888X   '?8  ''888E` x88:  `)8b.   X888  888X '888>   888R I888>  beWE "888L
@@ -18,10 +20,32 @@ banner =["""
   X88888888hx. ..!     888&  .888888P`    "*88%""*88" '888!`  "*888*P"   .888N..888
  !   "*888888888"      R888" `   ^"F        `~    "    `"`      'Y"       `"888*""
         ^"***"`         ""                                                   ""
-                                                TEST VERSION v.0.2
+                                                TEST VERSION v.{version}
 
 """]
 path = ""
+def checking_update():
+        os.sys.stdout.flush()
+        os.sys.stdout.write("Checking Update...")
+        os.sys.stdout.flush()
+        req = requests.get("https://raw.githubusercontent.com/QairexStudio/dismod/main/main.py").text
+        if req.text('version = "{0}"'.format(version)) != -1:
+            upda = input("Do you want to update dismod? [Y/N]: ").lower()
+            if "y" in upda or upda.startswith("y"):
+                os.sys.stdout.flush()
+                os.sys.stdout.write("\rUpdating package...")
+                os.sys.stdout.flush()
+                return
+            if "n" in upda or upda.startswith("n"):
+                os.sys.stdout.flush()
+                os.sys.stdout.write("\rUpdate canceled!")
+                os.sys.stdout.flush()
+                return
+            os.sys.stdout.flush()
+            os.sys.stdout.write("\rWrong answer!")
+
+
+
 def start_animation():
     for t in random.choice(banner):
         time.sleep(0.00114)
@@ -36,7 +60,7 @@ def main():
         plugin_command = {"run": "Execute script", "set": "Set variable", "restart": "Reset config", "config": "Show config"}
         for l in plugin_command.keys():
             plug_com.append(l)
-        komut = {"load": "Load module", "help": "Show this help menu", "clear": "clear screen", "back": "Return from module", "banner": "Show random banner", "exit": "Exit the dismod", "restart": "Reset all configs", "modules": "Show all modules"}
+        komut = {"load": "Load module", "help": "Show this help menu", "clear": "clear screen", "back": "Return from module", "banner": "Show random banner", "exit": "Exit the dismod", "restart": "Reset all configs", "modules": "Show all modules", "update": "Update dismod"}
         for t in komut.keys():
             keys.append(t)
         command = input(str(path) + ">>>")
@@ -213,10 +237,14 @@ def main():
             print("Wrong command. Type help to see the list of commands!")
             return
         if keys[7] in command.lower():
-            print("Module list:")
+            print("                 Module list:")
             for t in commands:
                 print(t)
             return
+        if keys[8] in command.lower():
+            checking_update()
+
+
 if not os.geteuid() == 0:
     print("You \033[4;49;91mMust\033[0m be \033[1;49;37mroot!\033[0m")
 else:
