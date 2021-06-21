@@ -10,6 +10,8 @@ Simple discord hacking pack.
 
 - [ ] Graphics
 
+- [ ] Module
+
 ## Contact
 
 QairexStudio@gmail.com
