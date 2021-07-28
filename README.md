@@ -14,4 +14,4 @@ Simple discord hacking pack.
 
 ## Contact
 
-QairexStudio@gmail.com
+QairexStudio@gmail.com or https://discord.gg/DXaEam8Bmb
