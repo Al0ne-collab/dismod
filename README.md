@@ -18,4 +18,5 @@ https://discord.gg/DXaEam8Bmb
 
 ## Donate & support
 
-BTC: bc1qaujsyl0zkak5pgkm5f0n9shml7yz4drczft37r
+BTC: bc1qkgz6tax8eyf4sktzvads543xy3ctlee60sh5jc
+
