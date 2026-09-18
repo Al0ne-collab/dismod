@@ -1,4 +1,4 @@
-import os
+##import os
 import time
 import subprocess
 import random
@@ -7,7 +7,7 @@ import json
 import glob
 import readline
 import requests
-
+##Lastchain
 os.system("clear")
 version = "0.3"
 banner =[f"""
