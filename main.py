@@ -7,7 +7,7 @@ import json
 import glob
 import readline
 import requests
-## CODED BY 81L1NM1Y0R from Qairex Studio
+
 os.system("clear")
 version = "0.3"
 banner =[f"""
