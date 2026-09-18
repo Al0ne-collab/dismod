@@ -1,6 +1,6 @@
 # DISMOD
 
-Dismod is Discord Toolkit: **Raider**, **Selfbot**, **Hacking tools**
+Dismod is Discord Toolkit: **Raider**, **Selfbot**, **Hacking tools** and **Anti-Ban**...
 
 Dismod still under **development** phase
 
