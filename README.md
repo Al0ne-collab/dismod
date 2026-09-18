@@ -1,22 +1,34 @@
 # DISMOD
 
-Simple discord hacking pack.
+Dismod is Discord Toolkit: **Raider**, **Selfbot**, **Hacking tools**
 
-## Future Features
+Dismod still under **development** phase
 
-- [ ] Multiple Session
+We are adding **commands** and **new features**
 
-- [ ] Commands
+Contact us email to rent it and get more info
 
-- [ ] Graphics
+First ProtoType:
 
-- [ ] Module
+https://github.com/user-attachments/assets/df48986b-c79e-41be-a66b-f0c364e233dc
 
 ## Contact
 
 https://discord.gg/DXaEam8Bmb
 
+beastchain@proton.me
+
 ## Donate & support
 
 BTC: bc1qkgz6tax8eyf4sktzvads543xy3ctlee60sh5jc
+
+## DISCLAIMER
+
+We are not responsible for usage.
+
+Dismod not created for harmful and illegal activities
+
+So
+
+Responsible whos using Dismod.
 
