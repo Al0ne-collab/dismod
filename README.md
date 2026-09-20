@@ -8,7 +8,7 @@ We are adding **commands** and **new features**
 
 Contact us email to rent it and get more info
 
-First ProtoType:
+First Selfbot ProtoType:
 
 https://github.com/user-attachments/assets/df48986b-c79e-41be-a66b-f0c364e233dc
 
