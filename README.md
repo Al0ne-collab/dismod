@@ -28,7 +28,5 @@ We are not responsible for usage.
 
 Dismod not created for harmful and illegal activities
 
-So
-
 Responsible whos using Dismod.
 
