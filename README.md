@@ -30,7 +30,7 @@ and
 
 Mention us to new anything
 
-Let's build together
+Let's build together...
 
 https://youtube.com/@lastchainofficial
 
