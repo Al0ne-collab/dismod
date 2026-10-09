@@ -18,6 +18,22 @@ https://discord.gg/DXaEam8Bmb
 
 beastchain@proton.me
 
+## Grow Together
+
+Subscribe comment and like
+
+to
+
+Don't miss new updates your need
+
+and
+
+Mention us to new anything
+
+Let's build together
+
+https://youtube.com/@lastchainofficial
+
 ## Donate & support
 
 BTC: bc1qkgz6tax8eyf4sktzvads543xy3ctlee60sh5jc
