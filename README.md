@@ -16,7 +16,7 @@ https://github.com/user-attachments/assets/df48986b-c79e-41be-a66b-f0c364e233dc
 
 https://discord.gg/DXaEam8Bmb
 
-beastchain@proton.me
+huntest34@proton.me
 
 ## Grow Together
 
